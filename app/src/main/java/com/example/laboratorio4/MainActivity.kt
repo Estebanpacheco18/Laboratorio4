@@ -16,32 +16,52 @@ import com.example.laboratorio4.ui.theme.Laboratorio4Theme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
-            Laboratorio4Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+            MyApplicationTheme {
+                MainScreen()
             }
         }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun MainScreen() {
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text("My Application") }
+            )
+        },
+        content = { innerPadding ->
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(innerPadding)
+                    .padding(16.dp)
+            ) {
+                items(20) { index ->
+                    ListItem(index)
+                }
+            }
+        }
+    )
+}
+
+@Composable
+fun ListItem(index: Int) {
     Text(
-        text = "Hello $name!",
-        modifier = modifier
+        text = "Item #$index",
+        style = MaterialTheme.typography.body1,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp)
     )
 }
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    Laboratorio4Theme {
-        Greeting("Android")
+fun MainScreenPreview() {
+    MyApplicationTheme {
+        MainScreen()
     }
 }
