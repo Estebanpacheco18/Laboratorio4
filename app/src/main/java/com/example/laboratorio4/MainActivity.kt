@@ -84,6 +84,12 @@ fun ListItem(index: Int) {
             text = "Item #$index",
             style = MaterialTheme.typography.bodyLarge
         )
+
+    // Cambio por Desarrollador A
+       Text(
+            text = "Cambio por Desarrollador A",
+            style = MaterialTheme.typography.bodyLarge.copy(color = Color.Red)
+        )
     }
 }
 
