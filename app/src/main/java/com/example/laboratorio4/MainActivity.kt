@@ -100,9 +100,9 @@ fun ListItem(index: Int) {
             text = "Item #$index",
             style = MaterialTheme.typography.bodyLarge
         )
-        // Combinar cambios de ambos desarrolladores
-         Text(
-            text = "Cambio por Desarrollador A y B",
+         // Cambio por Desarrollador A
+        Text(
+            text = "Cambio por Desarrollador A",
             style = MaterialTheme.typography.bodyLarge.copy(color = Color.Red)
         )
     }  
