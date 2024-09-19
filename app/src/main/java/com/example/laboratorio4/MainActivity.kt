@@ -25,12 +25,32 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
+fun MyDialog(onDismiss: () -> Unit) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = { Text(text = "Dialog Title") },
+        text = { Text(text = "This is the content of the dialog.") },
+        confirmButton = {
+            Button(onClick = onDismiss) {
+                Text("OK")
+            }
+        }
+    )
+}
+
+@Composable
 fun MainScreen() {
+    var showDialog by remember { mutableStateOf(false) }
+
+    if (showDialog) {
+        MyDialog(onDismiss = { showDialog = false })
+    }
+
     Scaffold(
-        topBar = {
-            TopAppBar(
-                title = { Text("My Application") }
-            )
+        floatingActionButton = {
+            Button(onClick = { showDialog = true }) {
+                Text("Show Dialog")
+            }
         },
         content = { innerPadding ->
             LazyColumn(
