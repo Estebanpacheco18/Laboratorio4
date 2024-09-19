@@ -4,20 +4,36 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.example.laboratorio4.ui.theme.Laboratorio4Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyApplicationTheme {
+            Laboratorio4Theme {
                 MainScreen()
             }
         }
@@ -29,7 +45,7 @@ fun MyDialog(onDismiss: () -> Unit) {
     AlertDialog(
         onDismissRequest = onDismiss,
         title = { Text(text = "Dialog Title") },
-        text = { Text(text = "This is the content of the dialog.") },
+        text = { Text(text = "This is the Beto Coaquira.") },
         confirmButton = {
             Button(onClick = onDismiss) {
                 Text("OK")
@@ -87,7 +103,7 @@ fun ListItem(index: Int) {
         // Combinar cambios de ambos desarrolladores
          Text(
             text = "Cambio por Desarrollador A y B",
-            style = MaterialTheme.typography.bodyLarge.copy(color = Color.Purple)
+            style = MaterialTheme.typography.bodyLarge.copy(color = Color.Red)
         )
     }  
       
@@ -96,7 +112,7 @@ fun ListItem(index: Int) {
 @Preview(showBackground = true)
 @Composable
 fun MainScreenPreview() {
-    MyApplicationTheme {
+    Laboratorio4Theme {
         MainScreen()
     }
 }
