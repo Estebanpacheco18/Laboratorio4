@@ -73,7 +73,7 @@ fun ListItem(index: Int) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp),
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically.button //.
     ) {
         Icon(
             imageVector = Icons.Default.Star,
