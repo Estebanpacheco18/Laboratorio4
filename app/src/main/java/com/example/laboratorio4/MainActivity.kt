@@ -84,8 +84,19 @@ fun ListItem(index: Int) {
             text = "Item #$index",
             style = MaterialTheme.typography.bodyLarge
         )
+        Icon(
+            imageVector = Icons.Default.Star,
+            contentDescription = "Star Icon",
+            modifier = Modifier.padding(end = 8.dp).size(24.dp).background(Color.Yellow)
+        )
+        Text(
+            text = "Item #$index",
+            style = MaterialTheme.typography.bodyLarge.copy(color = Color.Blue)
+        )
     }
 }
+
+
 
 @Preview(showBackground = true)
 @Composable
