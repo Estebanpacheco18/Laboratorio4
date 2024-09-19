@@ -45,7 +45,7 @@ fun MyDialog(onDismiss: () -> Unit) {
     AlertDialog(
         onDismissRequest = onDismiss,
         title = { Text(text = "Dialog Title") },
-        text = { Text(text = "This is the Beto Coaquira.") },
+        text = { Text(text = "This is the Stivie Pacheco") },
         confirmButton = {
             Button(onClick = onDismiss) {
                 Text("OK")
