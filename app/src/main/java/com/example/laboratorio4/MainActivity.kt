@@ -49,13 +49,22 @@ fun MainScreen() {
 
 @Composable
 fun ListItem(index: Int) {
-    Text(
-        text = "Item #$index",
-        style = MaterialTheme.typography.body1,
+    Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(8.dp)
-    )
+            .padding(8.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Icon(
+            imageVector = Icons.Default.Star,
+            contentDescription = "Star Icon",
+            modifier = Modifier.padding(end = 8.dp)
+        )
+        Text(
+            text = "Item #$index",
+            style = MaterialTheme.typography.bodyLarge
+        )
+    }
 }
 
 @Preview(showBackground = true)
